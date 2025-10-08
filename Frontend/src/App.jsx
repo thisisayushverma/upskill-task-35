@@ -38,6 +38,9 @@ function App() {
     try {
       const res = await fetch(`${backendUrl}/api/user/register`,{
         method:"POST",
+        headers:{
+          "content-type":"application/json"
+        },
         body:JSON.stringify(credentials)
       })
       const data = await res.json();
